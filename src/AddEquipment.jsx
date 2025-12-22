@@ -64,7 +64,7 @@ const AddEquipment = () => {
        <input name='customization' type="text" placeholder="Customization" className="input w-full input-neutral border border-1 p-4 rounded-2xl" />
        <input name='stockStatus' type="text" placeholder="Stock Status" className="input w-full input-neutral border border-1 p-4 rounded-2xl" />
        <input name='userName' type="text" placeholder="User Name" className="input w-full input-neutral border border-1 p-4 rounded-2xl" />
-       <input name='userEmail' type="text" placeholder="User Email" className="input w-full input-neutral border border-1 p-4 rounded-2xl" />
+       <input name='userEmail' type="text" placeholder="Enter your logged Email" className="input w-full input-neutral border border-1 p-4 rounded-2xl" />
         </div>
       <button className="btn btn-block border border-1 rounded-2xl  mb-8 bg-black text-white">Submit</button>
         </div>

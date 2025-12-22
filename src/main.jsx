@@ -87,7 +87,8 @@ element:
 },{
   path:'/viewcart',
   element:
-  <><Viewcart></Viewcart>,
+  <><Navbar></Navbar>,
+  <Viewcart></Viewcart>,
   <Footer></Footer>
   </>,
   loader:()=>fetch('http://localhost:5000/addtocart')

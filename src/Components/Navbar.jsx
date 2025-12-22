@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Authcontext } from './AuthContext/AuthProvider';
 import Swal from 'sweetalert2';
-
 const Navbar = () => {
   const {user,logoutUser,loading}=useContext(Authcontext)
   // console.log(user);
@@ -18,16 +17,11 @@ const Navbar = () => {
 });
   }
 
-
-
-
   if(loading){
  return<div className='items-center justify-center flex'>
  <span className="loading loading-bars loading-xl"></span>
  </div>
 }
-
-
 
 
     return (
@@ -75,7 +69,7 @@ const Navbar = () => {
         tabIndex={0}
         className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
         <div className="card-body">
-          <span className="text-lg font-bold p-5">{showCart} Items</span>
+          <span className="text-lg font-bold p-5"> {showCart} Items</span>
           <span className="text-info p-5">Subtotal:{price}৳</span>
           <div className="card-actions  items-center justify-center p-3">
          <NavLink to={'/viewcart'}> <button  className="btn btn-primary btn-block  rounded-2xl bg-green-500 w-35">View cart</button> </NavLink>   

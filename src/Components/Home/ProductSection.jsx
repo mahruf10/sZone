@@ -21,20 +21,32 @@ const ProductSection = () => {
       })
   }, [slug])
   //  console.log(product);
+ 
 
   const visibleItem=product.slice(0,3)
 
   const addtoCart = (tk,cartProduct) => {
     if (user) {
       setCart(prev => prev + 1);
+
+       const cartData = {
+      userId: user.uid,  
+      productId: cartProduct.id,
+      name: cartProduct.name,
+      price: cartProduct.price,
+      image: cartProduct.image_url,
+      quantity: 1
+    };
+
+
    fetch('http://localhost:5000/addtocart',{
   method:'POST',
   headers:{
     'content-type':'application/json',
   },
-  body:JSON.stringify(cartProduct)
+  body:JSON.stringify(cartData)
    })
-  console.log(cartProduct);
+  console.log(cartData);
   
 
       const money =parseFloat(price)
@@ -54,8 +66,10 @@ const ProductSection = () => {
 
     }
   };
+useEffect(() => {
+  setshowCart(cart);
+}, [cart]);
 
-  setshowCart(cart)
   if (loading) {
     return <div className="flex w-52 flex-col gap-4">
   <div className="skeleton h-32 w-full"></div>
